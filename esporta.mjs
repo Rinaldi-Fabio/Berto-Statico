@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 const BASE = '/Berto-Statico/'; // GitHub Pages serve il sito sotto https://rinaldi-fabio.github.io/Berto-Statico/
 const OUT = dirname( fileURLToPath( import.meta.url ) );
 const DIST = join( OUT, '..', 'dist' );
-const KEEP = new Set( [ '.git', '.nojekyll', 'esporta.mjs', 'README.md' ] );
+const KEEP = new Set( [ '.git', '.gitattributes', '.nojekyll', 'esporta.mjs', 'README.md' ] );
 
 // Rimuove l'esportazione precedente e ricopia dist.
 for ( const f of await readdir( OUT ) ) if ( ! KEEP.has( f ) ) await rm( join( OUT, f ), { recursive: true } );
